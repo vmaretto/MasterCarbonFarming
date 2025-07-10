@@ -598,35 +598,59 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-/* Modal per dettagli SDG */
-.sdg-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+        /* FLIP CARD SDG */
+.sdgs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
 }
-.sdg-modal-content {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-    text-align: left;
+.sdg-item {
+  perspective: 800px;
 }
-.sdg-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
-    cursor: pointer;
+.sdg-card {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* mantiene il quadrato */
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
+.sdg-front,
+.sdg-back {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+}
+.sdg-front {
+  background: linear-gradient(135deg, #2c5f2d, #4a7c59);
+  color: white;
+}
+.sdg-front .sdg-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.sdg-front .sdg-title-label {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.sdg-back {
+  background: #f8fffe;
+  color: #333;
+  transform: rotateY(180deg);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.sdg-item.flipped .sdg-card {
+  transform: rotateY(180deg);
+}
+
         
         /* Candidate Section */
         .candidate-section {
@@ -1446,87 +1470,129 @@
                 </p>
             </div>
             
-            <div class="sdgs-grid">
-  <div class="sdg-item"
-       data-sdg="2"
-       data-title="Fame Zero"
-       data-description="Sconfiggere la fame, garantire accesso a cibo sicuro e nutriente per tutti.">
-    <div class="sdg-number">2</div>
-    <div class="sdg-title-label">Fame Zero</div>
+
+<div class="sdgs-grid">
+  <div class="sdg-item" data-description="Sconfiggere la fame, garantire accesso a cibo sicuro e nutriente per tutti.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">2</div>
+        <div class="sdg-title-label">Fame Zero</div>
+      </div>
+      <div class="sdg-back">
+        Sconfiggere la fame, garantire accesso a cibo sicuro e nutriente per tutti.
+      </div>
+    </div>
   </div>
 
-  <div class="sdg-item"
-       data-sdg="6"
-       data-title="Acqua pulita"
-       data-description="Garantire disponibilità di acqua pulita e servizi igienico-sanitari per tutti.">
-    <div class="sdg-number">6</div>
-    <div class="sdg-title-label">Acqua pulita</div>
+  <div class="sdg-item" data-description="Garantire disponibilità di acqua pulita e servizi igienico-sanitari per tutti.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">6</div>
+        <div class="sdg-title-label">Acqua pulita</div>
+      </div>
+      <div class="sdg-back">
+        Garantire disponibilità di acqua pulita e servizi igienico-sanitari per tutti.
+      </div>
+    </div>
   </div>
 
-  <div class="sdg-item"
-       data-sdg="7"
-       data-title="Energia pulita"
-       data-description="Assicurare accesso a energie rinnovabili, affidabili e moderne per tutti.">
-    <div class="sdg-number">7</div>
-    <div class="sdg-title-label">Energia pulita</div>
+  <div class="sdg-item" data-description="Assicurare accesso a energie rinnovabili, affidabili e moderne per tutti.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">7</div>
+        <div class="sdg-title-label">Energia pulita</div>
+      </div>
+      <div class="sdg-back">
+        Assicurare accesso a energie rinnovabili, affidabili e moderne per tutti.
+      </div>
+    </div>
   </div>
 
-  <div class="sdg-item"
-       data-sdg="8"
-       data-title="Lavoro dignitoso"
-       data-description="Promuovere crescita economica sostenuta e lavoro dignitoso per tutti.">
-    <div class="sdg-number">8</div>
-    <div class="sdg-title-label">Lavoro dignitoso</div>
+  <div class="sdg-item" data-description="Promuovere crescita economica sostenuta e lavoro dignitoso per tutti.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">8</div>
+        <div class="sdg-title-label">Lavoro dignitoso</div>
+      </div>
+      <div class="sdg-back">
+        Promuovere crescita economica sostenuta e lavoro dignitoso per tutti.
+      </div>
+    </div>
   </div>
 
-  <div class="sdg-item"
-       data-sdg="9"
-       data-title="Innovazione"
-       data-description="Costruire infrastrutture resilienti e promuovere innovazione e industrializzazione sostenibile.">
-    <div class="sdg-number">9</div>
-    <div class="sdg-title-label">Innovazione</div>
+  <div class="sdg-item" data-description="Costruire infrastrutture resilienti e promuovere innovazione sostenibile.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">9</div>
+        <div class="sdg-title-label">Innovazione</div>
+      </div>
+      <div class="sdg-back">
+        Costruire infrastrutture resilienti e promuovere innovazione sostenibile.
+      </div>
+    </div>
   </div>
 
-  <div class="sdg-item"
-       data-sdg="11"
-       data-title="Città sostenibili"
-       data-description="Rendere le città e gli insediamenti inclusivi, sicuri e sostenibili.">
-    <div class="sdg-number">11</div>
-    <div class="sdg-title-label">Città sostenibili</div>
+  <div class="sdg-item" data-description="Rendere le città e gli insediamenti inclusivi, sicuri e sostenibili.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">11</div>
+        <div class="sdg-title-label">Città sostenibili</div>
+      </div>
+      <div class="sdg-back">
+        Rendere le città e gli insediamenti inclusivi, sicuri e sostenibili.
+      </div>
+    </div>
   </div>
 
-  <div class="sdg-item"
-       data-sdg="12"
-       data-title="Consumo responsabile"
-       data-description="Garantire modelli di consumo e produzione sostenibili.">
-    <div class="sdg-number">12</div>
-    <div class="sdg-title-label">Consumo responsabile</div>
+  <div class="sdg-item" data-description="Garantire modelli di consumo e produzione sostenibili.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">12</div>
+        <div class="sdg-title-label">Consumo responsabile</div>
+      </div>
+      <div class="sdg-back">
+        Garantire modelli di consumo e produzione sostenibili.
+      </div>
+    </div>
   </div>
 
-  <div class="sdg-item"
-       data-sdg="13"
-       data-title="Clima"
-       data-description="Adottare misure urgenti per combattere il cambiamento climatico.">
-    <div class="sdg-number">13</div>
-    <div class="sdg-title-label">Clima</div>
+  <div class="sdg-item" data-description="Adottare misure urgenti per combattere il cambiamento climatico.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">13</div>
+        <div class="sdg-title-label">Clima</div>
+      </div>
+      <div class="sdg-back">
+        Adottare misure urgenti per combattere il cambiamento climatico.
+      </div>
+    </div>
   </div>
 
-  <div class="sdg-item"
-       data-sdg="15"
-       data-title="Vita sulla Terra"
-       data-description="Proteggere e ripristinare ecosistemi terrestri e gestire le foreste in modo sostenibile.">
-    <div class="sdg-number">15</div>
-    <div class="sdg-title-label">Vita sulla Terra</div>
+  <div class="sdg-item" data-description="Proteggere e ripristinare ecosistemi terrestri in modo sostenibile.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">15</div>
+        <div class="sdg-title-label">Vita sulla Terra</div>
+      </div>
+      <div class="sdg-back">
+        Proteggere e ripristinare ecosistemi terrestri in modo sostenibile.
+      </div>
+    </div>
   </div>
 
-  <div class="sdg-item"
-       data-sdg="17"
-       data-title="Partnership"
-       data-description="Rafforzare il partenariato globale per il raggiungimento degli SDGs.">
-    <div class="sdg-number">17</div>
-    <div class="sdg-title-label">Partnership</div>
+  <div class="sdg-item" data-description="Rafforzare il partenariato globale per lo sviluppo sostenibile.">
+    <div class="sdg-card">
+      <div class="sdg-front">
+        <div class="sdg-number">17</div>
+        <div class="sdg-title-label">Partnership</div>
+      </div>
+      <div class="sdg-back">
+        Rafforzare il partenariato globale per lo sviluppo sostenibile.
+      </div>
+    </div>
   </div>
 </div>
+            
         </div>
     </section>
 
@@ -1797,40 +1863,13 @@
         });
     </script>
 
-     <!-- Modal per dettagli SDG -->
-  <div id="sdgModal" class="sdg-modal">
-    <div class="sdg-modal-content">
-      <span class="sdg-close">&times;</span>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDescription"></p>
-    </div>
-  </div>
-
-  <script>
-    // Funzionalità modal SDG
-    const sdgItems = document.querySelectorAll('.sdg-item');
-    const modal    = document.getElementById('sdgModal');
-    const titleEl  = document.getElementById('modalTitle');
-    const descEl   = document.getElementById('modalDescription');
-    const closeBtn = modal.querySelector('.sdg-close');
-
-    sdgItems.forEach(item => {
-      item.addEventListener('click', () => {
-        titleEl.textContent = `SDG ${item.dataset.sdg}: ${item.dataset.title}`;
-        descEl.textContent  = item.dataset.description;
-        modal.style.display = 'flex';
-      });
+     <script>
+  document.querySelectorAll('.sdg-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('flipped');
     });
-
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-    modal.addEventListener('click', e => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-  </script>
+  });
+</script>
     
 </body>
 </html>
