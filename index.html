@@ -598,6 +598,36 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
+/* Modal per dettagli SDG */
+.sdg-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.sdg-modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    text-align: left;
+}
+.sdg-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+        
         /* Candidate Section */
         .candidate-section {
             background: linear-gradient(135deg, #f8fffe 0%, #e8f5e8 100%);
@@ -831,24 +861,20 @@
             font-size: 1.05rem;
         }
 
-        .price-highlight {
-            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 25px;
-        }
+        price-highlight {
+  background: #f8fffe;
+  border: 1px solid #f0f0f0;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 25px;
+}
+.price-main {
+  color: #2c5f2d;
+}
+.price-detail {
+  color: #555;
+}
 
-        .price-main {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .price-detail {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
 
         /* Footer */
         footer {
@@ -1138,6 +1164,23 @@
                         <p class="faculty-role">European Environment Agency - Esperta in politiche climatiche europee</p>
                     </div>
                 </div>
+
+<!-- Nuovi faculty fittizi -->
+    <div class="faculty-card">
+        <div class="faculty-image">👨‍🔧</div>
+        <div class="faculty-info">
+            <h3 class="faculty-name">Dr. Fabio Rinaldi</h3>
+            <p class="faculty-role">Università di Bologna - Specialista in agronomia rigenerativa</p>
+        </div>
+    </div>
+    <div class="faculty-card">
+        <div class="faculty-image">👩‍🔧</div>
+        <div class="faculty-info">
+            <h3 class="faculty-name">Prof.ssa Laura Galli</h3>
+            <p class="faculty-role">Università di Napoli - Esperta in gestione sostenibile del suolo</p>
+        </div>
+    </div>
+                
             </div>
         </div>
     </section>
@@ -1404,17 +1447,86 @@
             </div>
             
             <div class="sdgs-grid">
-                <div class="sdg-item" title="SDG 2: Fame Zero">2</div>
-                <div class="sdg-item" title="SDG 6: Acqua pulita e servizi igienico-sanitari">6</div>
-                <div class="sdg-item" title="SDG 7: Energia pulita e accessibile">7</div>
-                <div class="sdg-item" title="SDG 8: Lavoro dignitoso e crescita economica">8</div>
-                <div class="sdg-item" title="SDG 9: Imprese, innovazione e infrastrutture">9</div>
-                <div class="sdg-item" title="SDG 11: Città e comunità sostenibili">11</div>
-                <div class="sdg-item" title="SDG 12: Consumo e produzione responsabili">12</div>
-                <div class="sdg-item" title="SDG 13: Lotta contro il cambiamento climatico">13</div>
-                <div class="sdg-item" title="SDG 15: Vita sulla Terra">15</div>
-                <div class="sdg-item" title="SDG 17: Partnership per gli obiettivi">17</div>
-            </div>
+  <div class="sdg-item"
+       data-sdg="2"
+       data-title="Fame Zero"
+       data-description="Sconfiggere la fame, garantire accesso a cibo sicuro e nutriente per tutti.">
+    <div class="sdg-number">2</div>
+    <div class="sdg-title-label">Fame Zero</div>
+  </div>
+
+  <div class="sdg-item"
+       data-sdg="6"
+       data-title="Acqua pulita"
+       data-description="Garantire disponibilità di acqua pulita e servizi igienico-sanitari per tutti.">
+    <div class="sdg-number">6</div>
+    <div class="sdg-title-label">Acqua pulita</div>
+  </div>
+
+  <div class="sdg-item"
+       data-sdg="7"
+       data-title="Energia pulita"
+       data-description="Assicurare accesso a energie rinnovabili, affidabili e moderne per tutti.">
+    <div class="sdg-number">7</div>
+    <div class="sdg-title-label">Energia pulita</div>
+  </div>
+
+  <div class="sdg-item"
+       data-sdg="8"
+       data-title="Lavoro dignitoso"
+       data-description="Promuovere crescita economica sostenuta e lavoro dignitoso per tutti.">
+    <div class="sdg-number">8</div>
+    <div class="sdg-title-label">Lavoro dignitoso</div>
+  </div>
+
+  <div class="sdg-item"
+       data-sdg="9"
+       data-title="Innovazione"
+       data-description="Costruire infrastrutture resilienti e promuovere innovazione e industrializzazione sostenibile.">
+    <div class="sdg-number">9</div>
+    <div class="sdg-title-label">Innovazione</div>
+  </div>
+
+  <div class="sdg-item"
+       data-sdg="11"
+       data-title="Città sostenibili"
+       data-description="Rendere le città e gli insediamenti inclusivi, sicuri e sostenibili.">
+    <div class="sdg-number">11</div>
+    <div class="sdg-title-label">Città sostenibili</div>
+  </div>
+
+  <div class="sdg-item"
+       data-sdg="12"
+       data-title="Consumo responsabile"
+       data-description="Garantire modelli di consumo e produzione sostenibili.">
+    <div class="sdg-number">12</div>
+    <div class="sdg-title-label">Consumo responsabile</div>
+  </div>
+
+  <div class="sdg-item"
+       data-sdg="13"
+       data-title="Clima"
+       data-description="Adottare misure urgenti per combattere il cambiamento climatico.">
+    <div class="sdg-number">13</div>
+    <div class="sdg-title-label">Clima</div>
+  </div>
+
+  <div class="sdg-item"
+       data-sdg="15"
+       data-title="Vita sulla Terra"
+       data-description="Proteggere e ripristinare ecosistemi terrestri e gestire le foreste in modo sostenibile.">
+    <div class="sdg-number">15</div>
+    <div class="sdg-title-label">Vita sulla Terra</div>
+  </div>
+
+  <div class="sdg-item"
+       data-sdg="17"
+       data-title="Partnership"
+       data-description="Rafforzare il partenariato globale per il raggiungimento degli SDGs.">
+    <div class="sdg-number">17</div>
+    <div class="sdg-title-label">Partnership</div>
+  </div>
+</div>
         </div>
     </section>
 
@@ -1684,5 +1796,41 @@
             observer.observe(section);
         });
     </script>
+
+     <!-- Modal per dettagli SDG -->
+  <div id="sdgModal" class="sdg-modal">
+    <div class="sdg-modal-content">
+      <span class="sdg-close">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <script>
+    // Funzionalità modal SDG
+    const sdgItems = document.querySelectorAll('.sdg-item');
+    const modal    = document.getElementById('sdgModal');
+    const titleEl  = document.getElementById('modalTitle');
+    const descEl   = document.getElementById('modalDescription');
+    const closeBtn = modal.querySelector('.sdg-close');
+
+    sdgItems.forEach(item => {
+      item.addEventListener('click', () => {
+        titleEl.textContent = `SDG ${item.dataset.sdg}: ${item.dataset.title}`;
+        descEl.textContent  = item.dataset.description;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+    
 </body>
 </html>
