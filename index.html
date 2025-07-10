@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master in Carbon Farming - Università della Tuscia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5f2d 0%, #4a7c59 100%);
+            color: white;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .university-logo {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .download-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .download-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            padding: 80px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2c5f2d;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c5f2d;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 80px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Overview Section */
+        .overview {
+            background: linear-gradient(135deg, #f8fffe 0%, #e8f5e8 100%);
+        }
+
+        .overview-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .overview-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .overview-text p {
+            margin-bottom: 25px;
+        }
+
+        .overview-image {
+            text-align: center;
+        }
+
+        .overview-img {
+            width: 100%;
+            max-width: 500px;
+            height: 350px;
+            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* What You Will Learn Section */
+        .learn-section {
+            background: white;
+        }
+
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .learn-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 30px;
+            background: #f8fffe;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .learn-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .learn-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .learn-content h3 {
+            color: #2c5f2d;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .learn-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Faculty Section */
+        .faculty-section {
+            background: linear-gradient(135deg, #f8fffe 0%, #e8f5e8 100%);
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .faculty-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .faculty-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .faculty-info {
+            padding: 30px;
+        }
+
+        .faculty-name {
+            font-size: 1.3rem;
+            color: #2c5f2d;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .faculty-role {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Partnership Section */
+        .partnership-section {
+            background: white;
+        }
+
+        .partnership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .partner-card {
+            background: #f8fffe;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .partner-logo {
+            width: 100px;
+            height: 60px;
+            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .partner-type {
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .partner-name {
+            font-size: 1.4rem;
+            color: #2c5f2d;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .partner-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Challenge Based Learning */
+        .cbl-section {
+            background: linear-gradient(135deg, #2c5f2d 0%, #4a7c59 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cbl-section .section-title {
+            color: white;
+        }
+
+        .cbl-section .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .cbl-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cbl-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cbl-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .cbl-feature {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .cbl-feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .cbl-feature h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .cbl-feature p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Course Content Section */
+        .course-content {
+            background: #f8fffe;
+        }
+
+        .modules-scroll {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .modules-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .module-card {
+            min-width: 380px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+        }
+
+        .module-header {
+            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .module-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .module-cfu {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .module-content {
+            padding: 40px 30px;
+        }
+
+        .module-topics {
+            list-style: none;
+        }
+
+        .module-topics li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+            font-size: 1.05rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .module-topics li:last-child {
+            border-bottom: none;
+        }
+
+        .module-topics li::before {
+            content: "✓";
+            color: #2c5f2d;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 12px;
+        }
+
+        .scroll-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .scroll-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2c5f2d;
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-btn:hover {
+            background: #4a7c59;
+            transform: scale(1.1);
+        }
+
+        /* SDGs Section */
+        .sdgs-section {
+            background: white;
+        }
+
+        .sdgs-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .sdgs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sdg-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .sdg-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Candidate Section */
+        .candidate-section {
+            background: linear-gradient(135deg, #f8fffe 0%, #e8f5e8 100%);
+        }
+
+        .candidate-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .candidate-description {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .candidate-criteria {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            text-align: left;
+        }
+
+        .criteria-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .criteria-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .criteria-item h3 {
+            color: #2c5f2d;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .criteria-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: #f8fffe;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: #2c5f2d;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: linear-gradient(135deg, #f8fffe 0%, #e8f5e8 100%);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #2c5f2d;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-marker {
+            width: 20px;
+            height: 20px;
+            background: #2c5f2d;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            border: 4px solid white;
+        }
+
+        .timeline-month {
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            color: #2c5f2d;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .timeline-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: white;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .info-card {
+            background: #f8fffe;
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .info-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .info-title {
+            font-size: 1.5rem;
+            color: #2c5f2d;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .info-content {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .price-highlight {
+            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 25px;
+        }
+
+        .price-main {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .price-detail {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c5f2d;
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 25px;
+            color: #e8f5e8;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a7c59;
+            padding-top: 30px;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .overview-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .info-grid, .learn-grid, .candidate-criteria {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .modules-scroll {
+                padding-left: 20px;
+            }
+            
+            .module-card {
+                min-width: 320px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cbl-features {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                margin-left: 60px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .module-card {
+                min-width: 280px;
+            }
+
+            .sdgs-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="university-logo">UNIVERSITÀ DELLA TUSCIA</div>
+                <h1 class="hero-title">Master in Carbon Farming</h1>
+                <p class="hero-subtitle">Abbraccia il nuovo paradigma della sostenibilità, dalla teoria alla pratica</p>
+                <p class="hero-description">
+                    Un percorso formativo innovativo per diventare esperti nella gestione sostenibile del carbonio 
+                    e guidare la transizione ecologica nel settore agroforestale.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#info" class="cta-button">Scopri di più</a>
+                    <button class="cta-button download-button" onclick="downloadBrochure()">📄 Scarica Brochure</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-number">60</span>
+                    <div class="stat-label">Crediti Formativi</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">12</span>
+                    <div class="stat-label">Mesi di durata</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">40</span>
+                    <div class="stat-label">Posti disponibili</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">30+</span>
+                    <div class="stat-label">Esperti internazionali</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="section overview">
+        <div class="container">
+            <h2 class="section-title">Un Master per il futuro sostenibile</h2>
+            <p class="section-subtitle">
+                Forma competenze multidisciplinari per guidare la transizione ecologica nel settore agroforestale
+            </p>
+            
+            <div class="overview-content">
+                <div class="overview-text">
+                    <p>
+                        Il Master in Carbon Farming è un percorso formativo innovativo che prepara professionisti altamente qualificati 
+                        nella gestione sostenibile del carbonio in agricoltura e nel settore LULUCF (Land use, Land Use Change and Forestry).
+                    </p>
+                    <p>
+                        Con un approccio pratico e multidisciplinare, il corso combina teoria avanzata, casi studio internazionali 
+                        e stage presso aziende leader del settore, fornendo strumenti concreti per la misurazione, certificazione 
+                        e valorizzazione economica dei crediti di carbonio.
+                    </p>
+                </div>
+                
+                <div class="overview-image">
+                    <div class="overview-img">🌱</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Will Learn Section -->
+    <section class="section learn-section">
+        <div class="container">
+            <h2 class="section-title">Cosa imparerai</h2>
+            <p class="section-subtitle">
+                Partecipando a moduli dinamici e interattivi, tenuti dai più autorevoli esperti del settore, acquisirai competenze per:
+            </p>
+            
+            <div class="learn-grid">
+                <div class="learn-item">
+                    <div class="learn-icon">🌍</div>
+                    <div class="learn-content">
+                        <h3>Gestire progetti Carbon Farming</h3>
+                        <p>Sviluppare, implementare e monitorare progetti di sequestro del carbonio su scala aziendale e territoriale.</p>
+                    </div>
+                </div>
+                
+                <div class="learn-item">
+                    <div class="learn-icon">📊</div>
+                    <div class="learn-content">
+                        <h3>Certificare crediti di carbonio</h3>
+                        <p>Utilizzare metodologie IPCC per la misurazione, reportistica e verifica (MRV) dei crediti di carbonio.</p>
+                    </div>
+                </div>
+                
+                <div class="learn-item">
+                    <div class="learn-icon">💼</div>
+                    <div class="learn-content">
+                        <h3>Navigare i mercati del carbonio</h3>
+                        <p>Comprendere le dinamiche economiche e i meccanismi di trading nei mercati volontari e compliance.</p>
+                    </div>
+                </div>
+                
+                <div class="learn-item">
+                    <div class="learn-icon">🔬</div>
+                    <div class="learn-content">
+                        <h3>Applicare tecnologie innovative</h3>
+                        <p>Utilizzare droni, satelliti, blockchain e big data per il monitoraggio e la tracciabilità.</p>
+                    </div>
+                </div>
+                
+                <div class="learn-item">
+                    <div class="learn-icon">🌿</div>
+                    <div class="learn-content">
+                        <h3>Implementare pratiche sostenibili</h3>
+                        <p>Progettare strategie agroforestali che massimizzano il sequestro di carbonio e i co-benefici.</p>
+                    </div>
+                </div>
+                
+                <div class="learn-item">
+                    <div class="learn-icon">📈</div>
+                    <div class="learn-content">
+                        <h3>Guidare la transizione ecologica</h3>
+                        <p>Sviluppare strategie aziendali per raggiungere la carbon neutrality e gli obiettivi climatici.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="section faculty-section">
+        <div class="container">
+            <h2 class="section-title">Faculty</h2>
+            <p class="section-subtitle">
+                I migliori esperti internazionali nel campo del Carbon Farming e della sostenibilità ambientale
+            </p>
+            
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <div class="faculty-image">👨‍🔬</div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Prof. Marco Acutis</h3>
+                        <p class="faculty-role">Università di Milano - Esperto in modellazione agroecosistemi e ciclo del carbonio</p>
+                    </div>
+                </div>
+                
+                <div class="faculty-card">
+                    <div class="faculty-image">👩‍💼</div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Dr.ssa Elena Comino</h3>
+                        <p class="faculty-role">Politecnico di Torino - Specialista in LCA e carbon footprint</p>
+                    </div>
+                </div>
+                
+                <div class="faculty-card">
+                    <div class="faculty-image">👨‍🌾</div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Prof. Riccardo Valentini</h3>
+                        <p class="faculty-role">Università della Tuscia - Premio Nobel per la Pace IPCC, esperto in climate change</p>
+                    </div>
+                </div>
+                
+                <div class="faculty-card">
+                    <div class="faculty-image">👩‍🔬</div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Dr.ssa Sarah Johnson</h3>
+                        <p class="faculty-role">European Environment Agency - Esperta in politiche climatiche europee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="section partnership-section">
+        <div class="container">
+            <h2 class="section-title">Partner del programma</h2>
+            <p class="section-subtitle">
+                Collaborazioni strategiche con istituzioni e aziende leader nel settore della sostenibilità
+            </p>
+            
+            <div class="partnership-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">FAO</div>
+                    <div class="partner-type">Partner Istituzionale</div>
+                    <h3 class="partner-name">FAO - Food and Agriculture Organization</h3>
+                    <p class="partner-description">
+                        Collaborazione per l'accesso alle più recenti metodologie internazionali per il Carbon Farming 
+                        e l'implementazione degli obiettivi di sviluppo sostenibile.
+                    </p>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo">EEA</div>
+                    <div class="partner-type">Partner Scientifico</div>
+                    <h3 class="partner-name">European Environment Agency</h3>
+                    <p class="partner-description">
+                        Partnership strategica per l'accesso a dati ambientali e metodologie di monitoraggio 
+                        dei cambiamenti climatici a livello europeo.
+                    </p>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo">LIFE</div>
+                    <div class="partner-type">Partner di Rete</div>
+                    <h3 class="partner-name">LIFE Climate Projects Network</h3>
+                    <p class="partner-description">
+                        Accesso privilegiato alla rete di progetti LIFE per opportunità di stage, 
+                        tirocini e sviluppo di project work innovativi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Based Learning Section -->
+    <section class="section cbl-section">
+        <div class="container">
+            <h2 class="section-title">Challenge Based Learning</h2>
+            <p class="section-subtitle">
+                Metodologia didattica innovativa basata sulla risoluzione di sfide reali
+            </p>
+            
+            <div class="cbl-content">
+                <p class="cbl-description">
+                    In tutti i nostri corsi ti troverai completamente coinvolto in una sfida. Lavora con i tuoi compagni 
+                    di squadra e sfrutta il tuo talento trovando una soluzione a problemi reali esistenti delle aziende 
+                    più rappresentative. La metodologia CBL ti aiuterà ad acquisire conoscenze approfondite e sviluppare 
+                    le competenze necessarie per prosperare in un mondo in cambiamento.
+                </p>
+                
+                <div class="cbl-features">
+                    <div class="cbl-feature">
+                        <div class="cbl-feature-icon">🎯</div>
+                        <h3>Problemi Reali</h3>
+                        <p>Progetti concreti di aziende leader nel settore agroforestale e della sostenibilità</p>
+                    </div>
+                    
+                    <div class="cbl-feature">
+                        <div class="cbl-feature-icon">👥</div>
+                        <h3>Team Work</h3>
+                        <p>Collaborazione multidisciplinare con professionisti provenienti da diversi background</p>
+                    </div>
+                    
+                    <div class="cbl-feature">
+                        <div class="cbl-feature-icon">🚀</div>
+                        <h3>Innovazione</h3>
+                        <p>Sviluppo di soluzioni innovative utilizzando le tecnologie più avanzate del settore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content Section -->
+    <section class="section course-content">
+        <div class="container">
+            <h2 class="section-title">Contenuti del corso</h2>
+            <p class="section-subtitle">
+                La nostra faculty internazionale ti guiderà verso i tuoi obiettivi attraverso un percorso strutturato e completo
+            </p>
+            
+            <div class="modules-scroll" id="modulesScroll">
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3 class="module-title">Introduzione al Ciclo del Carbonio</h3>
+                        <div class="module-cfu">4 CFU</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="module-topics">
+                            <li>Fondamenti del ciclo del carbonio in agricoltura e LULUCF</li>
+                            <li>Flussi di CO₂ e altri gas serra</li>
+                            <li>Effetti della gestione dell'uso del suolo</li>
+                            <li>Potenzialità del Carbon Farming</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3 class="module-title">Politiche Europee e Mercato del Carbonio</h3>
+                        <div class="module-cfu">4 CFU</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="module-topics">
+                            <li>Politiche climatiche europee e globali</li>
+                            <li>Inventari nazionali delle emissioni</li>
+                            <li>Regolamento Europeo CRCF 2024/3012</li>
+                            <li>Mercato ETS e meccanismi Art. 6</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3 class="module-title">Sequestro del Carbonio</h3>
+                        <div class="module-cfu">6 CFU</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="module-topics">
+                            <li>Bilancio del carbonio negli ecosistemi forestali</li>
+                            <li>Pratiche di gestione e uso del suolo</li>
+                            <li>Agroforestazione e riforestazione</li>
+                            <li>Co-benefici delle pratiche sostenibili</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3 class="module-title">Tecniche di Monitoraggio</h3>
+                        <div class="module-cfu">6 CFU</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="module-topics">
+                            <li>Metodologie IPCC per MRV</li>
+                            <li>Monitoraggio remoto con droni e satelliti</li>
+                            <li>Blockchain e big data per tracciabilità</li>
+                            <li>Modellazione scenari C-Farms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3 class="module-title">Certificazione Carbon Farming</h3>
+                        <div class="module-cfu">6 CFU</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="module-topics">
+                            <li>Carbon action plan aziendali</li>
+                            <li>Framework di certificazione</li>
+                            <li>Registro dei crediti e tracciabilità</li>
+                            <li>Opportunità di finanziamento</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3 class="module-title">Life Cycle Assessment</h3>
+                        <div class="module-cfu">6 CFU</div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="module-topics">
+                            <li>Principi di LCA nei sistemi agricoli</li>
+                            <li>Metodologie Carbon Footprint</li>
+                            <li>Casi studio filiere agroalimentari</li>
+                            <li>Strategie carbon neutrality</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="scroll-nav">
+                <button class="scroll-btn" onclick="scrollModules('left')">‹</button>
+                <button class="scroll-btn" onclick="scrollModules('right')">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section timeline-section">
+        <div class="container">
+            <h2 class="section-title">Timeline del Master</h2>
+            <p class="section-subtitle">
+                6 mesi di lezioni intensive + 6 mesi di project work e stage
+            </p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-month">Settembre 2025</div>
+                        <h3 class="timeline-title">Inizio del Master</h3>
+                        <p class="timeline-description">Lezioni introduttive, team building e orientamento ai progetti</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-month">Ottobre - Dicembre</div>
+                        <h3 class="timeline-title">Moduli Core</h3>
+                        <p class="timeline-description">Fondamenti teorici, politiche e metodologie di base</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-month">Gennaio - Febbraio</div>
+                        <h3 class="timeline-title">Moduli Specialistici</h3>
+                        <p class="timeline-description">Tecnologie avanzate, certificazione e mercati del carbonio</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-month">Marzo - Maggio</div>
+                        <h3 class="timeline-title">Stage e Project Work</h3>
+                        <p class="timeline-description">Esperienza pratica presso aziende partner e sviluppo progetti</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-month">Giugno - Agosto</div>
+                        <h3 class="timeline-title">Tesi e Networking</h3>
+                        <p class="timeline-description">Completamento tesi finale e eventi di networking</p>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SDGs Section -->
+    <section class="section sdgs-section">
+        <div class="container">
+            <h2 class="section-title">Impegno verso gli SDGs</h2>
+            <p class="section-subtitle">
+                Il nostro contributo agli Obiettivi di Sviluppo Sostenibile dell'Agenda 2030
+            </p>
+            
+            <div class="sdgs-intro">
+                <p>
+                    Il Master in Carbon Farming è progettato per contribuire attivamente al raggiungimento degli 
+                    Obiettivi di Sviluppo Sostenibile (SDGs) delle Nazioni Unite. Attraverso questo programma 
+                    formativo, potrai contribuire al raggiungimento di diversi obiettivi chiave:
+                </p>
+            </div>
+            
+            <div class="sdgs-grid">
+                <div class="sdg-item" title="SDG 2: Fame Zero">2</div>
+                <div class="sdg-item" title="SDG 6: Acqua pulita e servizi igienico-sanitari">6</div>
+                <div class="sdg-item" title="SDG 7: Energia pulita e accessibile">7</div>
+                <div class="sdg-item" title="SDG 8: Lavoro dignitoso e crescita economica">8</div>
+                <div class="sdg-item" title="SDG 9: Imprese, innovazione e infrastrutture">9</div>
+                <div class="sdg-item" title="SDG 11: Città e comunità sostenibili">11</div>
+                <div class="sdg-item" title="SDG 12: Consumo e produzione responsabili">12</div>
+                <div class="sdg-item" title="SDG 13: Lotta contro il cambiamento climatico">13</div>
+                <div class="sdg-item" title="SDG 15: Vita sulla Terra">15</div>
+                <div class="sdg-item" title="SDG 17: Partnership per gli obiettivi">17</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Candidate Section -->
+    <section class="section candidate-section">
+        <div class="container">
+            <h2 class="section-title">Sei il candidato giusto per questo Master?</h2>
+            <p class="section-subtitle">
+                Questo programma richiede passione e impegno. Mostraci che puoi portare valore al corso e a tutti i suoi partecipanti.
+            </p>
+            
+            <div class="candidate-content">
+                <div class="candidate-description">
+                    <p>
+                        Cerchiamo professionisti motivati e visionari che vogliano essere protagonisti della transizione ecologica. 
+                        Il profilo ideale combina competenze tecniche, passione per la sostenibilità e capacità di leadership.
+                    </p>
+                </div>
+                
+                <div class="candidate-criteria">
+                    <div class="criteria-item">
+                        <h3>🎓 Background Accademico</h3>
+                        <p>Laurea magistrale in ambito agrario, ambientale, ingegneristico o economico con interesse per la sostenibilità</p>
+                    </div>
+                    
+                    <div class="criteria-item">
+                        <h3>💼 Esperienza Professionale</h3>
+                        <p>Preferibile esperienza in consulenza ambientale, project management o settore agroalimentare</p>
+                    </div>
+                    
+                    <div class="criteria-item">
+                        <h3>🌍 Visione Globale</h3>
+                        <p>Interesse per i temi globali del cambiamento climatico e dello sviluppo sostenibile</p>
+                    </div>
+                    
+                    <div class="criteria-item">
+                        <h3>🚀 Spirito Imprenditoriale</h3>
+                        <p>Capacità di innovazione e interesse per lo sviluppo di nuove soluzioni tecnologiche</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Cosa dicono di noi</h2>
+            <p class="section-subtitle">
+                La cosa di cui siamo più orgogliosi è la nostra community: scopri cosa dicono i nostri alumni dell'esperienza formativa
+            </p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Il Master mi ha fornito le competenze pratiche per sviluppare progetti carbon farming innovativi. 
+                        Oggi lavoro come consulente per aziende che vogliono ridurre il loro impatto ambientale."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Marco Rossi</h4>
+                            <p>Carbon Farming Consultant, EcoSolutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "L'approccio multidisciplinare e i docenti di livello internazionale hanno arricchito enormemente 
+                        la mia formazione. Il network creato durante il master è stato fondamentale per la mia carriera."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SB</div>
+                        <div class="author-info">
+                            <h4>Sara Bianchi</h4>
+                            <p>Project Manager, EU LIFE Projects</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Gli stage presso le aziende partner mi hanno permesso di applicare immediatamente 
+                        le conoscenze acquisite. Un'esperienza formativa completa e stimolante."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LV</div>
+                        <div class="author-info">
+                            <h4>Luca Verdi</h4>
+                            <p>Sustainability Manager, AgriTech Innovation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="section info-section" id="info">
+        <div class="container">
+            <h2 class="section-title">Informazioni pratiche</h2>
+            <p class="section-subtitle">
+                Tutto quello che devi sapere per iscriverti al Master
+            </p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🎓</div>
+                    <h3 class="info-title">Requisiti di ammissione</h3>
+                    <div class="info-content">
+                        <p><strong>Laurea Magistrale in:</strong></p>
+                        <ul style="text-align: left; margin-top: 15px; color: #555;">
+                            <li>Scienze Agrarie e Forestali</li>
+                            <li>Scienze Ambientali e Naturali</li>
+                            <li>Ingegneria per l'Ambiente</li>
+                            <li>Biotecnologie per l'Agricoltura</li>
+                            <li>Economia Agroalimentare</li>
+                            <li>Scienze della Sostenibilità</li>
+                        </ul>
+                        <p style="margin-top: 15px;">Selezione per titoli con valutazione curriculum.</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">💰</div>
+                    <h3 class="info-title">Costi di iscrizione</h3>
+                    <div class="info-content">
+                        <div class="price-highlight">
+                            <div class="price-main">€ 5.000</div>
+                            <div class="price-detail">Iscritti esterni (2 rate)</div>
+                        </div>
+                        <p style="margin-top: 20px; font-size: 1rem; color: #555;">
+                            <strong>Riduzioni previste:</strong><br>
+                            • Studenti UNITUS: € 2.500<br>
+                            • Convenzioni PA: € 3.500<br>
+                            • Dipendenti UNITUS: € 600
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">📅</div>
+                    <h3 class="info-title">Modalità e durata</h3>
+                    <div class="info-content">
+                        <p><strong>Durata:</strong> 12 mesi</p>
+                        <p><strong>Modalità:</strong> Blended (presenza + online)</p>
+                        <p><strong>Frequenza:</strong> Obbligatoria (max 30% assenze)</p>
+                        <p><strong>Sede:</strong> Università della Tuscia, Viterbo</p>
+                        <p><strong>Titolo:</strong> Master Universitario di II livello</p>
+                        <p><strong>Attività:</strong> Lezioni, laboratori, stage, project work</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">🚀</div>
+                    <h3 class="info-title">Opportunità di carriera</h3>
+                    <div class="info-content">
+                        <p><strong>Potrai lavorare come:</strong></p>
+                        <ul style="text-align: left; margin-top: 15px; color: #555;">
+                            <li>Carbon Farming Specialist</li>
+                            <li>Consulente per la sostenibilità</li>
+                            <li>Esperto in certificazione del carbonio</li>
+                            <li>Manager della transizione ecologica</li>
+                            <li>Analista dei mercati del carbonio</li>
+                            <li>Project Manager progetti LIFE/Horizon</li>
+                        </ul>
+                        <p style="margin-top: 15px;">Con stage e network internazionale inclusi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>Università della Tuscia<br>
+                    Unitus Academy<br>
+                    Via San Camillo de Lellis, snc<br>
+                    01100 Viterbo, Italia</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Informazioni</h3>
+                    <p><a href="mailto:master.carbonfarming@unitus.it">master.carbonfarming@unitus.it</a><br>
+                    <a href="tel:+390761357000">+39 0761 357000</a><br>
+                    <a href="#" onclick="alert('Consulta il bando ufficiale')">Bando di ammissione</a><br>
+                    <a href="#" onclick="downloadBrochure()">Scarica brochure PDF</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Seguici</h3>
+                    <p>Resta aggiornato sulle novità<br>
+                    del Carbon Farming e delle<br>
+                    opportunità nel settore<br>
+                    della sostenibilità ambientale</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Link utili</h3>
+                    <p><a href="https://www.unitus.it">Università della Tuscia</a><br>
+                    <a href="#">Regolamento didattico</a><br>
+                    <a href="#">Calendario accademico</a><br>
+                    <a href="#">Biblioteca digitale</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Università della Tuscia - Master in Carbon Farming. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function downloadBrochure() {
+            alert('📄 La brochure del Master in Carbon Farming sarà disponibile per il download a breve. Contatta master.carbonfarming@unitus.it per ricevere il materiale informativo completo.');
+        }
+
+        function scrollModules(direction) {
+            const container = document.getElementById('modulesScroll');
+            const scrollAmount = 400;
+            
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Smooth scrolling animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animations
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
