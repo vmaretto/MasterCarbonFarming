@@ -280,18 +280,20 @@
 
         .faculty-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
 
         .faculty-card {
-            background: white;
+            background: #fff;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             text-align: center;
+            display: flex;
+            flex-direction: column;
         }
 
         .faculty-card:hover {
@@ -301,13 +303,9 @@
 
         .faculty-image {
             width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #2c5f2d, #4a7c59);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
 
         .faculty-info {
@@ -325,6 +323,13 @@
             color: #666;
             font-size: 1rem;
             line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .faculty-grid {
+                gap: 24px;
+                margin-top: 40px;
+            }
         }
 
         /* Partnership Section */
@@ -1158,7 +1163,7 @@
             
             <div class="faculty-grid">
                 <div class="faculty-card">
-                    <div class="faculty-image">👨‍🔬</div>
+                    <img class="faculty-image" src="assets/img/faculty-male.png" alt="Docente uomo">
                     <div class="faculty-info">
                         <h3 class="faculty-name">Prof. Marco Acutis</h3>
                         <p class="faculty-role">Università di Milano - Esperto in modellazione agroecosistemi e ciclo del carbonio</p>
@@ -1166,7 +1171,7 @@
                 </div>
                 
                 <div class="faculty-card">
-                    <div class="faculty-image">👩‍💼</div>
+                    <img class="faculty-image" src="assets/img/faculty-female.png" alt="Docente donna">
                     <div class="faculty-info">
                         <h3 class="faculty-name">Dr.ssa Elena Comino</h3>
                         <p class="faculty-role">Politecnico di Torino - Specialista in LCA e carbon footprint</p>
@@ -1174,7 +1179,7 @@
                 </div>
                 
                 <div class="faculty-card">
-                    <div class="faculty-image">👨‍🌾</div>
+                    <img class="faculty-image" src="assets/img/faculty-male.png" alt="Docente uomo">
                     <div class="faculty-info">
                         <h3 class="faculty-name">Prof. Riccardo Valentini</h3>
                         <p class="faculty-role">Università della Tuscia - Premio Nobel per la Pace IPCC, esperto in climate change</p>
@@ -1182,7 +1187,7 @@
                 </div>
                 
                 <div class="faculty-card">
-                    <div class="faculty-image">👩‍🔬</div>
+                    <img class="faculty-image" src="assets/img/faculty-female.png" alt="Docente donna">
                     <div class="faculty-info">
                         <h3 class="faculty-name">Dr.ssa Sarah Johnson</h3>
                         <p class="faculty-role">European Environment Agency - Esperta in politiche climatiche europee</p>
@@ -1191,14 +1196,14 @@
 
 <!-- Nuovi faculty fittizi -->
     <div class="faculty-card">
-        <div class="faculty-image">👨‍🔧</div>
+        <img class="faculty-image" src="assets/img/faculty-male.png" alt="Docente uomo">
         <div class="faculty-info">
             <h3 class="faculty-name">Dr. Fabio Rinaldi</h3>
             <p class="faculty-role">Università di Bologna - Specialista in agronomia rigenerativa</p>
         </div>
     </div>
     <div class="faculty-card">
-        <div class="faculty-image">👩‍🔧</div>
+        <img class="faculty-image" src="assets/img/faculty-female.png" alt="Docente donna">
         <div class="faculty-info">
             <h3 class="faculty-name">Prof.ssa Laura Galli</h3>
             <p class="faculty-role">Università di Napoli - Esperta in gestione sostenibile del suolo</p>
